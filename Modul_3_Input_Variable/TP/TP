@@ -1,0 +1,80 @@
+// Tugas Pendahuluan No 1
+// Jadi Untuk No 1 Untuk Bilangan Saya Menggunakan integer (int)
+// Jadi Kesimpulannya Untuk Keliling alun-alun Purwokerto Adalah 108 Menggunakan Rumus 4 x sisi (27)
+// Untuk Luas alun-alun Purwokerto Adalah 704 Mengunakan Rumus Sisi x Sisi
+
+package main
+
+import "fmt"
+
+func main() {
+	var sisi int = 27
+	keliling := 4 * sisi
+	luas := sisi * sisi
+
+	fmt.Println("Keliling alun-alun Purwokerto: ", keliling)
+	fmt.Println("Luas alun-alun Purwokerto: ", luas)
+}
+
+//Tugas Pendahuluan No 2
+//Untuk No 2 disini saya juga menggunakan integer (int) juga
+//Jadi Kesimpulannya Untuk Pemrograman di sini Kekuranganya adalah Pada bagian Pembagian 
+//Ketika Kita misal Menginput 3/9 Akan mengeluarkan Output 0 Karena mengunakan integer
+//Kalau Menggunakan float akan mengeluarkan output 0,333dst
+
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var num1, num2 int
+	var operator string
+
+	fmt.Print("Masukkan angka pertama: ")
+	fmt.Scanln(&num1)
+
+	fmt.Print("Masukkan operator (+, -, *, /): ")
+	fmt.Scanln(&operator)
+
+	fmt.Print("Masukkan angka kedua: ")
+	fmt.Scanln(&num2)
+
+	switch operator {
+	case "+":
+		fmt.Println("Hasil: ", num1+num2)
+	case "-":
+		fmt.Println("Hasil: ", num1-num2)
+	case "*":
+		fmt.Println("Hasil: ", num1*num2)
+	case "/":
+		if num2 != 0 {
+			fmt.Println("Hasil: ", num1/num2)
+		} else {
+			fmt.Println("Error: Pembagian dengan nol tidak diperbolehkan!")
+		}
+	default:
+		fmt.Println("Operator tidak valid. Gunakan +, -, *, atau /.")
+	}
+}
+
+//Tugas Pendahuluan No 3
+//Yaaa Seperti No 1&2 Saya tetap Menggunakan Int Jadi outputnya tidak detil
+
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var fahrenheit int
+
+	fmt.Print("Masukkan suhu dalam derajat Fahrenheit: ")
+	fmt.Scanln(&fahrenheit)
+
+	kelvin := (fahrenheit-32)*5/9 + 273
+
+	fmt.Println("Suhu dalam derajat Kelvin: ", kelvin)
+}
