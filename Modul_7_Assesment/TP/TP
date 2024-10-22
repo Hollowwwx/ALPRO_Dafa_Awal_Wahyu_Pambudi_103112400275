@@ -1,1 +1,89 @@
+// Soal 1
+// Jadi untuk Soal 1 ini Menurut saya cukup sederhana
+// Jadi untuk setiap bilangan bulat positif mulai dari 1 sampai dengan n akan di pangkat dengan 2
+// Jadi Semisal saya menginput 4 angka 1 sampai dengan 4 akan di pangkat 2 dan output nya akan 1 4 9 16
+// Menurut saya soal ini terlalu simpel jika hanya bilangan bulat saja dan pangkatnya tetap
+// Jadi bisa di variasikan semisal kita bisa menginput bilangan negatif dan pangkatnya bertingkat 
+// Jadi pangkatnya akan bertingkat jadi pangkat 1 sampai dengan n sesuai dengan angka yang kita input
+// Misal saya menginput -4 dan saya menentukan batas nya sampai 4 jadi ada 9 termasuk 0
+// outputnya akan menjadi -4 -9 -8 1 0 1 128 6561 262144
 
+package main
+
+import "fmt"
+
+func main() {
+    var n int
+    fmt.Print("Masukkan bilangan bulat positif N: ")
+    fmt.Scanln(&n)
+
+    if n <= 0 {
+        fmt.Println("Input harus bilangan bulat positif.")
+        return
+    }
+
+    fmt.Print("Keluaran: ")
+    for i := 1; i <= n; i++ {
+        fmt.Print(i*i, " ")
+    }
+    fmt.Println()
+}
+OUTPUT:
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 07\TP1.go"
+Masukkan bilangan bulat positif N: 20
+Keluaran: 1 4 9 16 25 36 49 64 81 100 121 144 169 196 225 256 289 324 361 400 
+PS P:\Golang>
+
+// Soal 2
+// Oke jadi program ini berfungsi untuk menghitung poin setiap belanja barang
+// Setiap pembelian barang akan mendapat 10 point 
+// Nah setiap pembelian di atas 5 barang akan bertambah 5 point jadi semisal kita membeli 7 barang akan seperti ini  5 * 10 + 2 * 15 = 50 + 30 = 80 poin
+// Nah sama seperti di atas bedanyaa setiap pembelian di atas 20 akan bertambah 10 point
+
+package main
+
+import "fmt"
+
+func main() {
+    var jumlahBarang int
+    fmt.Print("Masukkan jumlah barang yang dibeli: ")
+    fmt.Scanln(&jumlahBarang)
+
+    if jumlahBarang <= 0 {
+        fmt.Println("Jumlah barang harus bilangan bulat positif.")
+        return
+    }
+
+    totalPoin := 0
+
+    // Looping untuk menghitung poin dasar
+    for i := 1; i <= jumlahBarang; i++ {
+        totalPoin += 10 
+    }
+
+    // Menambahkan poin bonus jika jumlah barang lebih dari 5 (+5)
+    if jumlahBarang > 5 {
+        for i := 6; i <= jumlahBarang; i++ {
+            totalPoin += 5
+        }
+    }
+
+    // Menambahkan poin bonus (lagi) jika jumlah barang lebih dari 20 (+10)
+    if jumlahBarang > 20 { 
+        for i := 21; i <= jumlahBarang; i++ {
+            totalPoin += 10
+        }
+    } 
+
+    fmt.Println("Total poin:", totalPoin)
+}
+OUTPUT:
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 07\TP2.go"
+Masukkan jumlah barang yang dibeli: 5
+Total poin: 50
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 07\TP2.go"
+Masukkan jumlah barang yang dibeli: 12
+Total poin: 155
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 07\TP2.go"
+Masukkan jumlah barang yang dibeli: 23
+Total poin: 350
