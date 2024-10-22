@@ -1,1 +1,50 @@
-Here
+// Soal 1
+// 
+
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	var jariJari float64
+
+	fmt.Print("Masukkan jari-jari lingkaran: ")
+	fmt.Scanln(&jariJari)
+
+	luas := math.Pi * math.Pow(jariJari, 2)
+	keliling := 2 * math.Pi * jariJari
+
+	fmt.Println("Luas lingkaran:", luas)
+	fmt.Println("Keliling lingkaran:", keliling)
+}
+
+// Soal 2
+//
+
+package main
+
+import "fmt"
+
+func main() {
+	var jamKerjaMinggu, upahPerJam float64
+
+	fmt.Print("Masukkan jumlah jam kerja dalam seminggu: ")
+	fmt.Scanln(&jamKerjaMinggu)
+
+	fmt.Print("Masukkan upah per jam: ")
+	fmt.Scanln(&upahPerJam)
+
+	var jamLembur float64
+	if jamKerjaMinggu > 40 {
+		jamLembur = jamKerjaMinggu - 40
+		jamKerjaMinggu = 40
+	}
+
+	gaji := (jamKerjaMinggu * upahPerJam) + (jamLembur * 1.5 * upahPerJam)
+	gajiBulanan := gaji * 4 // Asumsi 4 minggu dalam sebulan
+
+	fmt.Println("Total gaji bulanan:", gajiBulanan)
+}
