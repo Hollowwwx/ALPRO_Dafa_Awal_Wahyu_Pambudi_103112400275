@@ -1,1 +1,47 @@
+// Soal no 1
 
+package main
+
+import "fmt"
+
+func main() {
+	var x, y int
+	 
+	fmt.Println("Masukan Nilai x:")
+	fmt.Scanln(&x)
+
+	fmt.Println("Masukan Nilai y")
+	fmt.Scanln(&y)
+
+	if y < x {
+		fmt.Println("Nilai y harus lebih besar dari x")
+	}
+
+	var sum int
+	for i := x; i<= y; i++ {
+			sum +=i
+	}
+
+	fmt.Printf("Jumlah bilangan dari %d sampai %d adalah: %d\n", x, y, sum)
+}
+
+OUTPUT:
+tenkai@Dissolution:/media/tenkai/Work Only/Linux golang galing$ go run "/media/tenkai/Work Only/Linux golang galing/Assesment/Assesment1.go"
+Masukan Nilai x:
+4
+Masukan Nilai y
+5
+Jumlah bilangan dari 4 sampai 5 adalah: 9
+tenkai@Dissolution:/media/tenkai/Work Only/Linux golang galing$ go run "/media/tenkai/Work Only/Linux golang galing/Assesment/Assesment1.go"
+Masukan Nilai x:
+2
+Masukan Nilai y
+100
+Jumlah bilangan dari 2 sampai 100 adalah: 5049
+
+// Soal no 2
+
+
+
+
+// Soal no 3
