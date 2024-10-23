@@ -75,3 +75,33 @@ Keluaran:
 1 4 9 16 25 36 49 64 81 100
 
 // Soal no 3
+
+package main
+
+import "fmt"
+
+func main() {
+	var qi int
+	fmt.Print("Masukan Jumlah Qirat:")
+	fmt.Scanln(&qi)
+
+	if qi <= 0 {
+		fmt.Println("Jumlah Qirat Tidak valid")
+		return
+	}
+
+	dn := qi / (10 * 10 * 6)
+	qi %= (10 * 10 * 6)
+	dr := qi / (10 * 6)
+	qi %= (10 * 6)
+	fl := qi / 6
+	qi %= 6
+
+	fmt.Printf("Dinar: %d, Dirham: %d, Fals: %d, Qirat: %d\n", dn, dr, fl, qi)
+
+}
+
+OUTPUT:
+tenkai@Dissolution:/media/tenkai/Work Only/Linux golang galing$ go run "/media/tenkai/Work Only/Linux golang galing/Assesment/Assesment3.go"
+Masukan Jumlah Qirat:100 
+Dinar: 0, Dirham: 1, Fals: 6, Qirat: 4
