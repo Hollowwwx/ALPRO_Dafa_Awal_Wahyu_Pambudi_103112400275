@@ -41,7 +41,37 @@ Jumlah bilangan dari 2 sampai 100 adalah: 5049
 
 // Soal no 2
 
+package main
 
+import "fmt"
 
+func main() {
+	var n int
+	fmt.Println("Masukan Bilangan Bulat:")
+	fmt.Scanln(&n)
+
+	if n <= 0 {
+		fmt.Println("Bilangan tidak boleh kurang dari 0 atau negatif")
+		return
+	}
+
+	fmt.Println("Keluaran:")
+	for i := 1; i <= n; i++ {
+        fmt.Print(i*i, " ")
+    }
+    fmt.Println()
+}
+
+OUTPUT:
+tenkai@Dissolution:/media/tenkai/Work Only/Linux golang galing$ go run "/media/tenkai/Work Only/Linux golang galing/Assesment/Assesment2.go"
+Masukan Bilangan Bulat:
+4
+Keluaran:
+1 4 9 16 
+tenkai@Dissolution:/media/tenkai/Work Only/Linux golang galing$ go run "/media/tenkai/Work Only/Linux golang galing/Assesment/Assesment2.go"
+Masukan Bilangan Bulat:
+10
+Keluaran:
+1 4 9 16 25 36 49 64 81 100
 
 // Soal no 3
