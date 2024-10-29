@@ -1,1 +1,67 @@
+// Soal No 1
+// Untuk soal pertama ini cukup simpel ya 
+// Disini saya menggunakan tipe data integer karena mengikuti contoh
+// Program ini berfungsi untuk menentukan lulusnya seorang Siswa
+// Dengan cara menginput nilainya
+// Jika nilai nya di atas 70 atau <= 70 maka siswa lulus
+// Sebaliknya jika nilainya dibawah 70 maka siswa tidak lulus'
+
+#SOURCE CODE
+package main
+
+import "fmt"
+
+func main() {
+	var n int
+
+	fmt.Print("Masukan nilai siswa: ")
+	fmt.Scanln(&n)
+
+	if n >= 70 {
+		fmt.Println("Siswa Lulus")
+	} else {
+		fmt.Println("Siswa Tidak lulus")
+	}
+}
+#OUTPUT
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul Pendahuluan\tempCodeRunnerFile.go"
+Masukan nilai siswa: 80
+Siswa Lulus   
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul Pendahuluan\tempCodeRunnerFile.go"
+Masukan nilai siswa: 65
+Siswa Tidak lulus
+
+
+// Soal No 2
+// Sama soal no 1, soal ini cukup simpel
+// Disini saya menggunakan tipe data integer juga
+// Program ini berfungsi untuk menentukan bilangan genap atau ganjil
+// Dengan cara membagi bilangan yang diinput setelah itu dibagi dengan 2
+// Jika bilangan yang di input habis dibagi 2 maka akan mengeluarkan output genap
+// Dan sebaliknya jika bilangan yang di input tidak habis di bagi 2 maka akan mengeluarkan output ganjil
+
+#SOURCE CODE
+package main
+
+import "fmt"
+
+func main() {
+	var n int
+  
+	fmt.Print("Masukan Bilangan bulat: ")
+	fmt.Scanln(&n)
+
+	if n%2 == 0 {
+		fmt.Println("Angka Adalah Genap")
+	} else {
+		fmt.Println("Angka Adalah Ganjil")
+	}
+}
+#OUTPUT
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul Pendahuluan\test 2.go"
+Masukan Bilangan bulat: 12
+Angka Adalah Genap
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul Pendahuluan\test 2.go"
+Masukan Bilangan bulat: 13
+Angka Adalah Ganjil
 
