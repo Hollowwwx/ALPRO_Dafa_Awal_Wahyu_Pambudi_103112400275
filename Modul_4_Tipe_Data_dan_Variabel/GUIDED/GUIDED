@@ -1,1 +1,50 @@
+//Contoh soal modul 4
+1) Sebuah program digunakan untuk mengkonversi detik ke jam, menit dan detik. 
+Masukan terdiri dari suatu bilangan bulat positif yang menyatakan waktu dalam satuan 
+detik. 
+Keluaran terdiri dari suatu teks yang menyatakan jam, menit dan detik. 
+Contoh masukan dan keluaran: 
+No| Masukan  |         Keluaran 
+1 | 3661 | 1 jam 1 menit dan 1 detik 
+2 | 7322 | 2 jam 2 menit dan 2 detik 
+3 | 3600 | 1 jam 0 menit dan 0 detik 
+
+#CODINGAN
+package main  
+
+import "fmt"  
+
+func main() {  
+
+	var detik, jam, menit int  
+
+	fmt.Print("Masukan detik: ")
+	fmt.Scan(&detik)  
+
+	jam = detik / 3600  
+	menit = (detik % 3600) / 60  
+	detik = detik % 60
+
+	fmt.Println(jam, "jam", menit, "menit dan", detik,"detik")  
+}
+
+#OUTPUT
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 04\tempCodeRunnerFile.go"
+Masukan detik: 3661
+1 jam 1 menit dan 1 detik
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Codingan ini berfungsi untuk membagi detik menjadi jam menit detik
+//Tipe data yang di pakai di sini adalah integer
+//Disini saya sedikit menambahkan codingan
+
+2) Sebuah program digunakan untuk menentukan apakah setiap digit pada suatu bilangan 
+terurut membesar atau tidak. 
+Masukan terdiri dari suatu bilangan bulat positif dengan jumlah digit adalah 3 (atau 
+antara 100 sampai dengan 999) 
+Keluaran adalah boolean yang menyatakan bilangan terurut membesar atau tidak. 
+Contoh masukan dan keluaran: 
+No| Masukan | Keluaran
+1 | 362 | false
+2 | 256 | true
+3 | 189 | true
 
