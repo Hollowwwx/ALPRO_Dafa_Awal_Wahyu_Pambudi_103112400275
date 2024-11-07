@@ -22,7 +22,7 @@ Keliling alun-alun Purwokerto:  108
 Luas alun-alun Purwokerto:  729
 
 [Done] exited with code=0 in 0.394 seconds
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //Tugas Pendahuluan No 2
 //Untuk No 2 disini saya juga menggunakan integer (int) juga
 //Jadi Kesimpulannya Untuk Pemrograman di sini Kekuranganya adalah Pada bagian Pembagian 
@@ -73,7 +73,7 @@ Masukkan operator (+, -, *, /): /
 Masukkan angka kedua: 3
 Hasil:  1     
 PS P:\Golang> 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //Tugas Pendahuluan No 3
 //Yaaa Seperti No 1&2 Saya tetap Menggunakan Int Jadi outputnya tidak detil
 
@@ -98,3 +98,4 @@ OUTPUT:
 PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 03\Tugas Pendahuluan Modul 3.3.go"
 Masukkan suhu dalam derajat Fahrenheit: 20
 Suhu dalam derajat Kelvin:  267
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
