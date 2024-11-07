@@ -19,7 +19,7 @@ func main() {
 }
 // Jadi program disini menggunakan float64
 // Program ini berfungsi untuk menghitung volume kubus berdasarkan panjang sisinya
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 2) Buatlah program dalam Bahasa Go yang digunakan untuk menghitung luas segitiga,
 apabila diketahui panjang alas dan tinggi dari segitiga.
 Masukan terdiri dari dua bilangan bulat positif yang menyatakan panjang alas dan
@@ -41,7 +41,7 @@ func main() {
 }
 // Jadi program disini menggunakan float64
 // Program ini berfungsi untuk menghitung luas segitiga
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 3) Sebuah program digunakan untuk menghitung konversi mata uang dari IDR ke Dolar US
 dengan Kurs 15,000 IDR / USD.
 Masukan terdiri dari bilangan bulat yang menyatakan uang dalam satuan IDR.
@@ -62,3 +62,4 @@ func main() {
 }
 // Jadi program disini menggunakan float64
 // Program disini berfungsi untuk mengkonversikan uang dari IDR KE USD Dengan kurs 15,0000/USD
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
