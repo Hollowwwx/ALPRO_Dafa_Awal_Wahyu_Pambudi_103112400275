@@ -1,2 +1,120 @@
 //Soal no 1
-// 
+//Program ini berfungsi untuk menghitung persamaan x
+//Tipe data yang dipakai disini adalah float64
+
+#CODINGAN
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	var fx float64
+	fmt.Print("Masukkan nilai f(x): ")
+	fmt.Scanln(&fx)
+
+	x := (2 / (fx - 5)) - 5
+
+	fmt.Println("Nilai x:", math.Round(x))
+}
+
+#OUTPUT
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 03\Unguided 1.go"
+Masukkan nilai f(x): 5.2
+Nilai x: 5 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Soal no 2
+//Program ini berfungsi untuk menghitung Volume dan luas Kulit Bola
+//Tipe data yang dipakai disini adalah float64
+
+#CODINGAN
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	var jj int
+	fmt.Print("Jari-jari = ")
+	fmt.Scanln(&jj)
+
+	v := (4.0 / 3.0) * math.Pi * math.Pow(float64(jj), 3)
+
+	l := 4 * math.Pi * math.Pow(float64(jj), 2)
+
+	fmt.Println("Bola dengan jari-jari", jj, "memiliki volume", v, "dan luas kulit", l)
+}
+
+#OUTPUT
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 03\tempCodeRunnerFile.go"
+Jari-jari = 5
+Bola dengan jari-jari 5 memiliki volume 523.598775598299 dan luas kulit 314.1592653589793
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Soal no 3
+//Program ini berfungsi untuk menentukan sebuah tahun kabisat atau tidak
+//Tipe data yang dipakai disini adalah integer dan boolean
+
+#CODINGAN
+package main
+
+import "fmt"
+
+func main() {
+	var th int
+	fmt.Print("Tahun: ")
+	fmt.Scanln(&th)
+
+	var k bool
+
+	if th%400 == 0 {
+		k = true
+	} else if th%4 == 0 && th%100 != 0 {
+		k = true
+	} else {
+		k = false
+	}
+
+	fmt.Println("Kabisat:", k)
+}
+
+#OUTPUT
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 03\Unguided 3.go"
+Tahun: 2016
+Kabisat: true
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Soal No 4
+//Program ini berfungsi untuk menentukan farenhite, reamur, dan kelvin dari inputan celcius
+//Tipe data yang dipakai disini adalah integer
+
+#CODINGAN
+package main
+
+import "fmt"
+
+func main() {
+	var c int
+	fmt.Print("Temperatur Celsius: ")
+	fmt.Scanln(&c)
+
+	f := (c * 9 / 5) + 32
+
+	r := c * 4 / 5
+
+	k := c + 273
+
+	fmt.Println("Derajat Reamur:", r)
+	fmt.Println("Derajat Fahrenheit:", f)
+	fmt.Println("Derajat Kelvin:", k)
+}
+
+#OUTPUT
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 03\Unguided 4.go"
+Temperatur Celsius: 50
+Derajat Reamur: 40     
+Derajat Fahrenheit: 122
+Derajat Kelvin: 323
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
