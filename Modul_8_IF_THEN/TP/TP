@@ -30,8 +30,7 @@ Siswa Lulus
 PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul Pendahuluan\tempCodeRunnerFile.go"
 Masukan nilai siswa: 65
 Siswa Tidak lulus
-
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Soal No 2
 // Sama soal no 1, soal ini cukup simpel
 // Disini saya menggunakan tipe data integer juga
