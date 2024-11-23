@@ -1,5 +1,8 @@
 // Soal no 1
-// 
+// Program ini berfungsi unutuk menghitung diskon suatu barang
+// Tipe data yang di gunakan adalah Float64
+// untuk rumusnya adalah Barang diskon = Harga awal x Diskon : 100
+// untuk rumus Harga akhir adalah Harga akhir = Harga awal - Besar Diskon
 
 package main
 
@@ -27,7 +30,9 @@ Masukkan diskon (%): 10
 Harga akhir: 9000
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Soal no 2
-//
+// Program ini berfungsi untuk Menghitung Berat badan ideal seseorang
+// Tipe data yang digunakan disini adalah Float64
+// Rumus yang digunakan untuk menghitung adalah Berat Badan = BMI x Tinggi badan x Tinggi badan
 
 package main
 
@@ -54,7 +59,8 @@ Masukkan tinggi badan (meter): 1.75
 Berat badan (kg): 69.978125
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Soal no 3
-//
+// Program ini berfungsi untuk menghitung panjang segitiga yang dibentuk oleh titik-titik
+// Tipe data yang digunakan disini adalah Float46
 
 package main
 
