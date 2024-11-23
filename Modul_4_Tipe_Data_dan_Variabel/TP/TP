@@ -1,5 +1,7 @@
 // Soal 1
-// 
+// Jadi Program ini berfungsi untuk menghitung luas dan keliling lingkaran
+// Untuk Rumus Luas disini adalah pi x r^2 dan untuk keliling 2 x pi x r
+// Tipe data yang di program ini adalah Float64
 
 package main
 
