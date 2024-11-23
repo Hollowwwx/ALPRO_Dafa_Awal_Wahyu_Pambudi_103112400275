@@ -61,3 +61,10 @@ func main() {
 
 	fmt.Println("Total gaji bulanan:", gajiBulanan)
 }
+
+OUTPUT:
+
+tenkai@Dissolution:/media/tenkai/Work Only/Linux golang galing$ go run "/media/tenkai/Work Only/Linux golang galing/Modul 04/Tugas Pendahuluan 4.1.go"
+Masukkan jumlah jam kerja dalam seminggu: 50
+Masukkan upah per jam: 5000
+Total gaji bulanan: 1.1e+06
