@@ -3,8 +3,6 @@
 // Untuk Rumus Luas disini adalah pi x r^2 dan untuk keliling 2 x pi x r
 // Tipe data yang di program ini adalah Float64
 
-
-
 package main
 
 import (
@@ -31,7 +29,7 @@ tenkai@Dissolution:/media/tenkai/Work Only/Linux golang galing$ go run "/media/t
 Masukkan jari-jari lingkaran: 2
 Luas lingkaran: 12.566370614359172
 Keliling lingkaran: 12.566370614359172
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Soal 2
 // Jadi Program ini berfungsi untuk menghitung gaji bulanan karyawan
 // Jika jam kerja lebih dari 40jam / minggu akan di hitung lembur dan bayaran menjadi 1.5x lipat
@@ -68,3 +66,4 @@ tenkai@Dissolution:/media/tenkai/Work Only/Linux golang galing$ go run "/media/t
 Masukkan jumlah jam kerja dalam seminggu: 50
 Masukkan upah per jam: 5000
 Total gaji bulanan: 1.1e+06
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
