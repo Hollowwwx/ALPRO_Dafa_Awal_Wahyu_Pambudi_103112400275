@@ -1,1 +1,103 @@
-Here
+// Soal no 1
+// 
+
+package main
+
+import "fmt"
+
+func main() {
+	var HA, D float64
+
+	fmt.Print("Masukkan harga awal: ")
+	fmt.Scanln(&HA)
+
+	fmt.Print("Masukkan diskon (%): ")
+	fmt.Scanln(&D)
+
+	BD := HA * D / 100
+	HK := HA - BD
+
+	fmt.Println("Harga akhir:", HK)
+}
+
+OUTPUT:
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 04\Unguided 4.go"
+Masukkan harga awal: 10000
+Masukkan diskon (%): 10
+Harga akhir: 9000
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Soal no 2
+//
+
+package main
+
+import "fmt"
+
+func main() {
+  var bmi, TB, BB float64
+
+  fmt.Print("Masukkan nilai BMI: ")
+  fmt.Scanln(&bmi)
+
+  fmt.Print("Masukkan tinggi badan (meter): ")
+  fmt.Scanln(&TB)
+
+  BB = bmi * TB * TB
+
+  fmt.Println("Berat badan (kg):", BB)
+}
+
+OUTPUT:
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 04\Unguided 4.2.go"
+Masukkan nilai BMI: 22.85
+Masukkan tinggi badan (meter): 1.75
+Berat badan (kg): 69.978125
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Soal no 3
+//
+
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	var ax, ay, bx, by, cx, cy float64
+
+	fmt.Println("Masukkan koordinat titik A (x y): ")
+	fmt.Scanln(&ax, &ay)
+
+	fmt.Println("Masukkan koordinat titik B (x y): ")
+	fmt.Scanln(&bx, &by)
+
+	fmt.Println("Masukkan koordinat titik C (x y): ")
+	fmt.Scanln(&cx, &cy)
+	
+	ab := math.Sqrt(math.Pow(bx-ax, 2) + math.Pow(by-ay, 2))
+	bc := math.Sqrt(math.Pow(cx-bx, 2) + math.Pow(cy-by, 2))
+	ac := math.Sqrt(math.Pow(cx-ax, 2) + math.Pow(cy-ay, 2))
+
+	var sisiTerpanjang float64
+	if ab >= bc && ab >= ac {
+		sisiTerpanjang = ab
+	} else if bc >= ab && bc >= ac {
+		sisiTerpanjang = bc
+	} else {
+		sisiTerpanjang = ac
+	}
+
+	fmt.Printf("Panjang sisi terpanjang: %.2f\n", sisiTerpanjang)
+}
+
+OUTPUT:
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 04\Unguided 4.3.go"
+Masukkan koordinat titik A (x y): 
+1.0 1.0
+Masukkan koordinat titik B (x y): 
+4.0 1.0
+Masukkan koordinat titik C (x y): 
+1.0 5.0
+Panjang sisi terpanjang: 5.00
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
