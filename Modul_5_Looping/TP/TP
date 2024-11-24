@@ -1,5 +1,7 @@
 // Soal no 1
-// 
+// Program ini berfungsi untuk menjumlahkan 1 hingga angka yang diinput
+// Tipe data yang digunakan adalah integer
+// jika kita menginput negatif atau 0 maka program akan mengeluarakan output "input tidak valid dan akan mengulang ke bagian input hingga inputannya benar
 
 package main
 
@@ -32,7 +34,9 @@ Masukan Bilangan Bulat:
 Jumlah Deret angka dari 1 hingga 3 Adalah: 6
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Soal no 2
-//
+// Program ini berfungsi untuk mencetak sebuah bintang segitiga sesuai angka berapa yang kita input
+// Tipe data yang digunakan adalah integer
+// Jika kita menginput 0 atau negatif makan akan mengulang program seperti Soal no 1
 
 package  main
 
@@ -67,7 +71,9 @@ Masukan Tinggi: 5
 *****
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Soal No 3
-//
+// Program ini berfungsi untuk menamplkan bilangan genap dari 1 hingga 50
+// Tipe data yang digunakan adalah integer
+// Jika kita menginput 0 atau negatif maka yang terjadi akan seperti soal no 1 dan 2
 
 package main
 
@@ -96,7 +102,8 @@ Masukan Angka: 9
 2 4 6 8
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Soal no 4
-//
+// Program ini adalah sebuah permainan tebak angka, disediakan 5x percobaan hingga gagal
+// tipe data yang digunakan disini adalah integer
 
 package main
 
