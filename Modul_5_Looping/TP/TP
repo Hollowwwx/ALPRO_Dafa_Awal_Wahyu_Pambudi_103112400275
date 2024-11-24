@@ -1,1 +1,154 @@
+// Soal no 1
+// 
 
+package main
+
+import "fmt"
+
+func main() {
+	var n int
+	var sum int = 0
+
+	fmt.Println("Masukan Bilangan Bulat:")
+	fmt.Scanln(&n)
+
+	if n <= 0 {
+		fmt.Println("Bilangan Tidak boleh kurang dari 0 atau Negatif")
+		fmt.Println("Input Tidak Valid")
+		return
+	}
+
+	for i := 1; i <= n; i++ {
+		sum += i
+	}
+
+	fmt.Printf("Jumlah Deret angka dari 1 hingga %d Adalah: %d\n", n, sum)
+}
+
+OUTPUT:
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 5&6\tempCodeRunnerFile.go"
+Masukan Bilangan Bulat:
+3
+Jumlah Deret angka dari 1 hingga 3 Adalah: 6
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Soal no 2
+//
+
+package  main
+
+import "fmt"
+
+func main() {
+	var tinggi int
+	
+	fmt.Print("Masukan Tinggi: ")
+	fmt.Scanln(&tinggi)
+
+	if tinggi <= 0 {
+		fmt.Println("INPUT TIDAK VALID")
+		return
+	}
+
+	for i := 1; i <= tinggi; i++ {
+		for j := 1; j <= i; j++ {
+			fmt.Print("*")
+		}
+		fmt.Println()
+	}
+}
+
+OUTPUT:
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 5&6\TP2.go"
+Masukan Tinggi: 5
+*
+**
+***
+****
+*****
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Soal No 3
+//
+
+package main
+
+import "fmt"
+
+func main() {
+	var n int
+	fmt.Print("Masukan Angka: ")
+	fmt.Scanln(&n)
+
+	if n <= 0 {
+		fmt.Println("INPUT TIDAK VALID!")
+		return
+	}
+
+	for i := 2; i <= n; i += 2 {
+		fmt.Print(i, " ")
+	}
+
+	fmt.Println()
+}
+
+OUTPUT:
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 5&6\tempCodeRunnerFile.go"
+Masukan Angka: 9
+2 4 6 8
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Soal no 4
+//
+
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func main() {
+	rand.Seed(time.Now().UnixNano())
+	angkaRahasia := rand.Intn(100) + 1
+	var tebakan int
+	var percobaan int
+
+	fmt.Println("Selamat datang di permainan tebak angka!")
+	fmt.Println("Saya telah memilih sebuah angka antara 1 hingga 100.")
+
+	for percobaan < 5 {
+		fmt.Printf("Percobaan ke-%d: ", percobaan+1)
+		fmt.Scanln(&tebakan)
+
+		if tebakan < angkaRahasia {
+			fmt.Println("Terlalu kecil!")
+		} else if tebakan > angkaRahasia {
+			fmt.Println("Terlalu besar!")
+		} else {
+			fmt.Printf("Selamat! Anda berhasil menebak angka %d dalam %d percobaan.\n", angkaRahasia, percobaan+1)
+			break
+		}
+
+		percobaan++
+	}
+
+	if percobaan == 5 {
+		fmt.Printf("Anda gagal menebak angka. Angka rahasianya adalah %d.\n", angkaRahasia)
+	}
+}
+
+OUTPUT:
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 5&6\tempCodeRunnerFile.go"
+Selamat datang di permainan tebak angka!
+Saya telah memilih sebuah angka antara 1 hingga 100.
+Percobaan ke-1: 2
+Terlalu kecil!
+Percobaan ke-2: 0
+Terlalu kecil!
+Percobaan ke-3: 3
+Terlalu kecil!
+Percobaan ke-4: 1
+Terlalu kecil!
+Percobaan ke-5: 90
+Terlalu besar!
+Anda gagal menebak angka. Angka rahasianya adalah 37.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
