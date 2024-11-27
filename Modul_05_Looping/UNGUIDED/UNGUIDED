@@ -1,1 +1,144 @@
+// Soal no 1
+// Program ini berfungsi untuk menjumlah kan deret angka 1 sampai angka yang kita input "n"
+// Tipe data yang digunakan adalah integer
+// Program ini akan mengeluarkan output "Bilangan Tidak boleh kurang dari 0 atau Negatif" jika kita menginput angka negatif atau menginput banyak angka
 
+package main
+
+import "fmt"
+
+func main() {
+	var n int
+	var sum int = 0
+
+	fmt.Println("Masukan Bilangan Bulat:")
+	fmt.Scanln(&n)
+
+	if n <= 0 {
+		fmt.Println("Bilangan Tidak boleh kurang dari 0 atau Negatif")
+		fmt.Println("Input Tidak Valid")
+		return
+	}
+
+	for i := 1; i <= n; i++ {
+		sum += i
+	}
+
+	fmt.Printf("Jumlah Deret angka dari 1 hingga %d Adalah: %d\n", n, sum)
+}
+
+OUTPUT:
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 5&6\tempCodeRunnerFile.go"
+Masukan Bilangan Bulat:
+3
+Jumlah Deret angka dari 1 hingga 3 Adalah: 6
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Soal no 2
+// Program ini berfungsi untuk mencari beberapa volume kerucut tergantung berapa banyak yang diinputkan
+// Tipe data yang digunakan adalah float64 
+// Program ini akan mengeluarkan output "Bilangan Tidak boleh kurang dari 0 atau Negatif" Jika kita menginput angka negatif
+
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	var n int
+	fmt.Print("Masukkan jumlah kerucut : ")
+	fmt.Scanln(&n)
+
+	if n <= 0 {
+		fmt.Println("Bilangan Tidak boleh kurang dari 0 atau Negatif")
+		fmt.Println("Input Tidak Valid")
+		return
+	}
+
+	for i := 1; i <= n; i++ {
+		var jariJari, tinggi float64
+		fmt.Printf("Masukkan jari-jari dan tinggi kerucut ke-%d (pisahkan dengan spasi): ", i)
+		fmt.Scanln(&jariJari, &tinggi)
+
+		volume := (1.0 / 3.0) * math.Pi * math.Pow(jariJari, 2) * tinggi
+		fmt.Printf("Volume kerucut ke-%d: %.2f\n", i, volume)
+	}
+}
+
+OUPUT:
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 5&6\Unguided 2.go"
+Masukkan jumlah kerucut : 1
+Masukkan jari-jari dan tinggi kerucut ke-1 (pisahkan dengan spasi): 3 4
+Volume kerucut ke-1: 37.70
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Soal no 3
+// Program ini berfungsi untuk mempangkatkan angka sesuai input pangkatnya dan angka yang mau dipangkatkan
+// Tipe Data yang digunakan adalah integer
+// Program ini akan mengeluarkan output "Input harus bilangan bulat positif." jika kita menginput angka negatif
+
+package main
+
+import "fmt"
+
+func main() {
+	var b, p int
+
+	fmt.Print("Masukkan bilangan: ")
+	fmt.Scanln(&b)
+
+	fmt.Print("Masukkan pangkat: ")
+	fmt.Scanln(&p)
+
+	if b <= 0 || p < 0 {
+		fmt.Println("Input harus bilangan bulat positif.")
+		return
+	}
+
+	h := 1
+	for i := 0; i < p; i++ {
+		h *= b
+	}
+
+	fmt.Printf("%d pangkat %d = %d\n", b, p, h)
+}
+
+OUTPUT:
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 5&6\tempCodeRunnerFile.go"
+Masukkan bilangan: 4
+Masukkan pangkat: 2
+4 pangkat 2 = 16
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Soal no 4
+// Program ini berfungsi untuk memfaktorial bilangan yang kita input
+// Tipe data yang digunakan adalah integer
+// Program ini akan mengeluarkan output "Input harus bilangan bulat non-negatif." jikka menginput angka negatif
+
+package main
+
+import "fmt"
+
+func main() {
+	var n int
+
+	fmt.Print("Masukkan bilangan bulat non-negatif: ")
+	fmt.Scanln(&n)
+
+	if n < 0 {
+		fmt.Println("Input harus bilangan bulat non-negatif.")
+		return
+	}
+
+	hasil := 1
+	for i := 1; i <= n; i++ {
+		hasil *= i
+	}
+
+	fmt.Printf("Faktorial dari %d adalah %d\n", n, hasil)
+}
+
+OUTPUT:
+PS P:\Golang> go run "p:\Golang\Linux golang galing\Modul 5&6\Unguided 4.go"
+Masukkan bilangan bulat non-negatif: go run "p:\Golang\Linux golang galing\Modul 5&6\Unguided 4.go"
+Faktorial dari 0 adalah 1
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
