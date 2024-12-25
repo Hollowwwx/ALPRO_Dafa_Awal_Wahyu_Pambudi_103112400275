@@ -1,1 +1,81 @@
+// Program ini memiliki fungsi untuk menghitung nilai absolut dari sebuah bilangan yang dimasukkan oleh pengguna. 
+// Nilai absolut adalah jarak suatu bilangan dari nol tanpa memperhatikan tanda positif atau negatif. 
+// Program ini bekerja dengan membaca input bilangan dari pengguna, kemudian memeriksa apakah bilangan tersebut bernilai negatif. 
+// Jika iya, program akan mengubahnya menjadi positif dengan menghilangkan tanda negatif. Setelah itu, hasil berupa nilai absolut akan ditampilkan. 
+// Fungsi ini berguna dalam berbagai aplikasi, seperti perhitungan jarak, magnitudo, atau proses normalisasi data, di mana hanya diperlukan nilai positif dari suatu bilangan.
 
+CODE:
+
+package main  
+import "fmt"  
+func main() {  
+    var bilangan int  
+    fmt.Scan(&bilangan)  
+    if bilangan < 0 { 
+        bilangan = -bilangan 
+    }  
+    fmt.Println(bilangan)  
+} 
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 8\Guided 1.go"
+-3
+3
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Program ini berfungsi untuk menentukan apakah bilangan yang dimasukkan oleh pengguna merupakan bilangan positif atau bukan. 
+// Program akan membaca sebuah bilangan integer dari input pengguna, kemudian mengevaluasi kondisinya. 
+// Jika bilangan lebih besar dari nol, program akan menganggapnya sebagai bilangan positif dan menampilkan teks "positif". 
+// Sebaliknya, jika bilangan sama dengan nol atau kurang dari nol, program akan menampilkan teks "bukan positif".
+
+CODE:
+
+package main  
+import "fmt"  
+func main() {  
+    var bilangan int  
+    var teks string 
+    fmt.Scan(&bilangan)  
+    teks = "bukan positif" 
+    if bilangan > 0 { 
+        teks = "positif" 
+    }  
+    fmt.Println(teks)  
+} 
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 8\Guided 2.go"
+-10
+bukan positif
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 8\Guided 2.go"
+5
+positif
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Program ini berfungsi untuk menentukan apakah bilangan yang dimasukkan oleh pengguna adalah bilangan genap dan negatif. 
+// Program membaca sebuah bilangan integer dari input pengguna, lalu menggunakan ekspresi logika untuk memeriksa dua kondisi: 
+// apakah bilangan tersebut habis dibagi 2 (bilangan % 2 == 0) dan apakah bilangan tersebut kurang dari nol (bilangan < 0). 
+// Hasil dari evaluasi kedua kondisi tersebut akan disimpan dalam variabel hasil dengan nilai true jika kedua kondisi terpenuhi, atau false jika salah satu atau keduanya tidak terpenuhi. 
+// Program kemudian mencetak hasil tersebut.
+
+CODE:
+
+package main  
+import "fmt"  
+func main() {  
+    var bilangan int  
+    var hasil bool 
+    fmt.Scan(&bilangan)  
+    hasil = bilangan % 2 == 0 && bilangan < 0 
+    fmt.Println(hasil)  
+} 
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 8\Guided 3.go"
+10
+false
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

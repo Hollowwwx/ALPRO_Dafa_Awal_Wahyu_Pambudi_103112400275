@@ -1,1 +1,104 @@
+// Program ini digunakan untuk menghitung jumlah motor yang diperlukan untuk kegiatan touring berdasarkan jumlah orang yang berpartisipasi, dengan asumsi setiap motor dapat membawa maksimal dua orang. 
+// Program meminta pengguna memasukkan jumlah orang, kemudian menentukan jumlah motor yang dibutuhkan. Jika jumlah orang genap, motor yang diperlukan dihitung dengan membagi jumlah orang dengan dua. 
+// Jika jumlah orang ganjil, motor yang diperlukan dihitung dengan membagi jumlah orang dengan dua, lalu menambahkan satu untuk mengakomodasi orang yang tersisa. 
+// Hasilnya akan ditampilkan kepada pengguna sebagai jumlah motor yang harus disediakan.
 
+CODE:
+
+package main
+
+import "fmt"
+
+func main() {
+  var jumlahOrang int
+
+  fmt.Print("Masukkan jumlah orang yang akan touring: ")
+  fmt.Scanln(&jumlahOrang)
+
+  var jumlahMotor int
+  if jumlahOrang%2 == 0 {
+    jumlahMotor = jumlahOrang / 2
+  } else {
+    jumlahMotor = (jumlahOrang / 2) + 1
+  }
+
+  fmt.Println("Jumlah motor yang diperlukan:", jumlahMotor)
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 8\tempCodeRunnerFile.go"
+Masukkan jumlah orang yang akan touring: 10
+Jumlah motor yang diperlukan: 5
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Program ini berfungsi untuk menentukan apakah bilangan yang dimasukkan oleh pengguna merupakan bilangan genap negatif. 
+// Program meminta pengguna memasukkan sebuah bilangan bulat, lalu memeriksa dua kondisi: 
+// apakah bilangan tersebut bernilai negatif (bilangan < 0) dan apakah bilangan tersebut genap (bilangan%2 == 0). 
+// Jika kedua kondisi terpenuhi, program mencetak "genap negatif". Jika salah satu atau kedua kondisi tidak terpenuhi, program mencetak "bukan". 
+// Program ini dapat digunakan untuk mengelompokkan bilangan berdasarkan sifat genap/ganjil dan positif/negatif.
+
+CODE:
+
+package main
+
+import "fmt"
+
+func main() {
+	var bilangan int
+
+	fmt.Print("Masukkan bilangan bulat: ")
+	fmt.Scanln(&bilangan)
+
+	if bilangan < 0 && bilangan%2 == 0 {
+		fmt.Println("genap negatif")
+	} else {
+		fmt.Println("bukan")
+	}
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 8\tempCodeRunnerFile.go"
+Masukkan bilangan bulat: 10
+bukan
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Program ini berfungsi untuk memeriksa hubungan kelipatan antara dua bilangan bulat positif, x dan y. 
+// Program meminta pengguna memasukkan nilai x dan y, lalu melakukan dua pengecekan: apakah y merupakan kelipatan dari x (y%x == 0) dan apakah x merupakan kelipatan dari y (x%y == 0). 
+// Untuk setiap pengecekan, program mencetak "true" jika kondisi terpenuhi dan "false" jika tidak. 
+// Program ini berguna untuk menentukan keterkaitan kelipatan antara dua bilangan dalam berbagai aplikasi matematika atau logika pemrograman.
+
+CODE:
+
+package main
+
+import "fmt"
+
+func main() {
+	var x, y int
+
+	fmt.Print("Masukkan bilangan bulat positif x dan y: ")
+	fmt.Scanln(&x, &y)
+
+	if y%x == 0 {
+		fmt.Println("true")
+	} else {
+		fmt.Println("false")
+	}
+
+	if x%y == 0 {
+		fmt.Println("true")
+	} else {
+		fmt.Println("false")
+	}
+}
+
+OUTPUT"
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 8\Unguided 3.go"
+Masukkan bilangan bulat positif x dan y: 10 5
+false
+true
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
