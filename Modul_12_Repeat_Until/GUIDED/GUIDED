@@ -1,0 +1,98 @@
+// Program ini menerima input berupa sebuah kata dan jumlah pengulangan yang diinginkan, lalu mencetak kata tersebut sesuai jumlah yang dimasukkan. 
+// Program menggunakan loop for dengan kondisi boolean done untuk menentukan kapan perulangan berhenti. 
+// Setiap kali kata dicetak, variabel penghitung (counter) ditambahkan 1, dan perulangan berhenti ketika nilai penghitung mencapai atau melebihi jumlah pengulangan yang diinginkan. 
+// Struktur logika ini menunjukkan cara lain untuk mengontrol perulangan tanpa menggunakan kondisi langsung dalam pernyataan for. 
+// Program ini sederhana namun efektif untuk tugas pengulangan berbasis input.
+
+CODE:
+
+package main
+
+import "fmt"
+
+func main() {
+	var word string
+	var repetitions int
+	fmt.Scan(&word, &repetitions)
+	counter := 0
+	for done := false; !done; {
+		fmt.Println(word)
+		counter++
+		done = (counter >= repetitions)
+	}
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 12\Guided 1.go"
+Pagi 3
+Pagi
+Pagi
+Pagi
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Program ini meminta input dari pengguna berupa angka (number) dan memeriksa apakah angka tersebut adalah bilangan bulat positif. 
+// Perulangan for akan terus berlangsung selama nilai number yang dimasukkan lebih kecil atau sama dengan 0 (dengan kondisi continueLoop = number <= 0). 
+// Setelah pengguna memasukkan bilangan bulat positif, perulangan akan berhenti dan program akan menampilkan pesan yang menyatakan bahwa angka tersebut adalah bilangan bulat positif. 
+// Program ini memastikan bahwa input yang dimasukkan adalah angka positif sebelum melanjutkan.
+
+CODE:
+
+package main
+
+import "fmt"
+
+func main() {
+	var number int
+	var continueLoop bool
+	for continueLoop = true; continueLoop; {
+		fmt.Scan(&number)
+		continueLoop = number <= 0
+	}
+	fmt.Printf("%d adalah bilangan bulat positif\n", number)
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 12\Guided 2.go"
+17
+17 adalah bilangan bulat positif
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Program ini meminta dua input bilangan bulat, yaitu x dan y, kemudian mengurangi nilai x sebanyak nilai y dalam sebuah perulangan for. 
+// Perulangan terus berlanjut hingga nilai x menjadi lebih kecil dari atau sama dengan 0. '
+// Setiap kali pengurangan dilakukan, nilai x yang baru akan ditampilkan. 
+// Setelah perulangan selesai, program akan mencetak apakah nilai x akhirnya menjadi 0. 
+// Jika iya, program mencetak true; jika tidak, program mencetak false. 
+// Program ini berguna untuk memeriksa apakah x dapat dibagi habis oleh y melalui pengurangan berulang.
+
+CODE:
+
+package main
+
+import "fmt"
+
+func main() {
+	var x int
+	var y int
+	var selesai bool
+	fmt.Scan(&x, &y)
+	for selesai = false; !selesai; {
+		x = x - y
+		fmt.Println(x)
+		selesai = x <= 0
+	}
+	fmt.Println(x == 0)
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 12\Guided 3.go"
+5
+2
+3
+1
+-1
+false
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

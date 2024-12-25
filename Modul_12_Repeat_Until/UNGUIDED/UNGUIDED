@@ -1,0 +1,126 @@
+// Program ini meminta pengguna untuk memasukkan sebuah bilangan bulat positif, kemudian menghitung jumlah digit dalam bilangan tersebut. 
+// Program menggunakan perulangan for yang akan membagi bilangan tersebut dengan 10 secara berulang, sehingga setiap iterasi mengurangi jumlah digit yang tersisa dalam bilangan. 
+// Setiap kali perulangan dilakukan, variabel jumlahDigit akan bertambah 1. 
+// Perulangan akan berhenti ketika bilangan menjadi 0, yang menandakan bahwa semua digit telah dihitung. 
+// Setelah itu, program akan menampilkan jumlah digit dari bilangan yang dimasukkan.
+
+CODE:
+
+package main
+
+import "fmt"
+
+func main() {
+	var bilangan, jumlahDigit int
+
+	fmt.Print("Masukkan bilangan bulat positif: ")
+	fmt.Scanln(&bilangan)
+
+	for {
+		bilangan /= 10
+		jumlahDigit++
+
+		if bilangan == 0 {
+			break
+		}
+	}
+
+	fmt.Println("Banyaknya digit:", jumlahDigit)
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 12\Unguided 1.go"
+Masukkan bilangan bulat positif: 1234
+Banyaknya digit: 4
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Program ini menerima input berupa bilangan desimal dan melakukan pembulatan menggunakan fungsi math.Ceil untuk membulatkan bilangan ke atas. 
+// Setelah pembulatan dihitung, program akan menjalankan perulangan yang terus mencetak nilai bilangan, kemudian menambahkan 0.1 pada setiap iterasi, 
+// hingga nilai bilangan mencapai atau melebihi hasil pembulatan (pembulatan). 
+// Ketika kondisi bilangan >= pembulatan tercapai, perulangan akan dihentikan. 
+// Program ini mencetak setiap langkah proses perulangan sambil menambahkan 0.1 pada nilai bilangan sampai mencapai pembulatan yang dihitung sebelumnya.
+
+CODE:
+
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	var bilangan float64
+
+	fmt.Print("Masukkan bilangan desimal: ")
+	fmt.Scanln(&bilangan)
+
+	pembulatan := math.Ceil(bilangan)
+
+	for {
+		fmt.Println(bilangan)
+		bilangan += 0.1
+
+		if bilangan >= pembulatan {
+			break
+		}
+	}
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 12\tempCodeRunnerFile.go"
+Masukkan bilangan desimal: 2.7
+2.8
+2.9
+3
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Program ini digunakan untuk mengumpulkan donasi dari beberapa donatur hingga mencapai target yang ditentukan. 
+// Program dimulai dengan meminta input target donasi, kemudian melanjutkan untuk menerima sumbangan dari setiap donatur secara berurutan. 
+// Setiap kali seorang donatur menyumbang, program menambahkan jumlah donasi tersebut ke total yang terkumpul dan mencetak total terkumpul hingga saat itu. 
+// Program akan terus meminta input donasi hingga total donasi mencapai atau melebihi target yang telah ditentukan. 
+// Setelah target tercapai, program akan mencetak pesan yang menunjukkan bahwa target tercapai, bersama dengan total donasi yang terkumpul dan jumlah donatur yang terlibat.
+
+CODE:
+
+package main
+
+import "fmt"
+
+func main() {
+	var targetDonasi, donasi, totalDonasi, jumlahDonatur int
+
+	fmt.Print("Masukkan target donasi: ")
+	fmt.Scanln(&targetDonasi)
+
+	for {
+		jumlahDonatur++
+		fmt.Print("Donatur ", jumlahDonatur, ": Menyumbang ")
+		fmt.Scanln(&donasi)
+
+		totalDonasi += donasi
+		fmt.Println("Total terkumpul:", totalDonasi)
+
+		if totalDonasi >= targetDonasi {
+			break
+		}
+	}
+
+	fmt.Println("Target tercapai! Total donasi:", totalDonasi, "dari", jumlahDonatur, "donatur.")
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 12\Unguided 3.go"
+Masukkan target donasi: 300
+Donatur 1: Menyumbang 100
+Total terkumpul: 100
+Donatur 2: Menyumbang 50
+Total terkumpul: 150
+Donatur 3: Menyumbang 200
+Total terkumpul: 350
+Target tercapai! Total donasi: 350 dari 3 donatur.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

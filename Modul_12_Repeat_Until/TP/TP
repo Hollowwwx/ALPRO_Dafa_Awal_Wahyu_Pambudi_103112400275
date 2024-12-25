@@ -1,0 +1,121 @@
+// Program ini merupakan permainan tebak angka di mana pengguna diminta untuk menebak angka yang telah ditentukan secara rahasia (dalam hal ini angka 7). 
+// Program akan terus meminta pengguna untuk memasukkan tebakan hingga mereka berhasil menebak angka yang benar. 
+// Jika tebakan pengguna benar, program akan mencetak pesan "Selamat, tebakan Anda benar!" dan berhenti. 
+// Jika tebakan salah, program akan mencetak pesan "Tebakan Anda salah, coba lagi." dan meminta pengguna untuk menebak ulang. 
+// Proses ini akan terus berlanjut hingga tebakan yang benar diberikan.
+
+CODE:
+
+package main
+
+import "fmt"
+
+func main() {
+  var tebakan, angkaRahasia int = 0, 7
+
+  for {
+    fmt.Print("Tebak angka (1-10): ")
+    fmt.Scanln(&tebakan)
+
+    if tebakan == angkaRahasia {
+      fmt.Println("Selamat, tebakan Anda benar!")
+      break
+    } else {
+      fmt.Println("Tebakan Anda salah, coba lagi.")
+    }
+  }
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 12\TP 1.go"
+Tebak angka (1-10): 10
+Tebakan Anda salah, coba lagi.
+Tebak angka (1-10): 2
+Tebakan Anda salah, coba lagi.
+Tebak angka (1-10): 4
+Tebakan Anda salah, coba lagi.
+Tebak angka (1-10): 5
+Tebakan Anda salah, coba lagi.
+Tebak angka (1-10): 6
+Tebakan Anda salah, coba lagi.
+Tebak angka (1-10): 7
+Selamat, tebakan Anda benar!
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Program ini meminta pengguna untuk memasukkan kata secara berulang. 
+// Setiap kali pengguna mengetikkan kata, program akan menampilkan kata tersebut. 
+// Program akan terus meminta kata sampai pengguna mengetikkan kata "telkom" (tidak membedakan huruf besar atau kecil), yang menyebabkan program berhenti dan menampilkan pesan "Program selesai." 
+// Penggunaan fungsi strings.ToLower(kata) memastikan bahwa perbandingan dilakukan tanpa memperhatikan kapitalisasi kata yang dimasukkan.
+
+CODE:
+
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	var kata string
+
+	for {
+		fmt.Print("Masukkan kata: ")
+		fmt.Scanln(&kata)
+
+		fmt.Println("Anda mengetik:", kata)
+
+		if strings.ToLower(kata) == "telkom" {
+			fmt.Println("Program selesai.")
+			break
+		}
+	}
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 12\TP 2.go"
+Masukkan kata: telkom
+Anda mengetik: telkom
+Program selesai.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Program ini berfungsi untuk menghitung total belanja berdasarkan input harga barang yang diberikan oleh pengguna. 
+// Program akan meminta pengguna untuk memasukkan harga barang satu per satu. 
+// Jika pengguna memasukkan harga barang dengan nilai 0, program akan berhenti dan menampilkan total belanja yang telah terkumpul. 
+// Setiap harga barang yang dimasukkan akan dijumlahkan ke dalam variabel totalBelanja, yang kemudian ditampilkan setelah proses input selesai.
+
+CODE:
+
+package main
+
+import "fmt"
+
+func main() {
+	var hargaBarang int
+	var totalBelanja int
+
+	for {
+		fmt.Print("Masukkan harga barang (ketik 0 untuk selesai): ")
+		fmt.Scanln(&hargaBarang)
+
+		if hargaBarang == 0 {
+			break
+		}
+
+		totalBelanja += hargaBarang
+	}
+
+	fmt.Println("Total belanja Anda:", totalBelanja)
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 12\TP 3.go"
+Masukkan harga barang (ketik 0 untuk selesai): 10000
+Masukkan harga barang (ketik 0 untuk selesai): 40000
+Masukkan harga barang (ketik 0 untuk selesai): 0
+Total belanja Anda: 50000
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
