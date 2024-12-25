@@ -1,0 +1,29 @@
+// Program ini akan mencetak bilangan ganjil dari 1 hingga nilai yang dimasukkan oleh pengguna. 
+// Program dimulai dengan meminta input sebuah bilangan. 
+// Kemudian, program menggunakan loop for untuk iterasi mulai dari 1 hingga nilai bilangan yang dimasukkan. 
+// Pada setiap iterasi, program memeriksa apakah angka tersebut ganjil dengan cara menggunakan kondisi j%2 != 0. 
+// Jika angka tersebut ganjil, maka program mencetak angka tersebut diikuti dengan spasi.
+
+CODE:
+
+package main
+
+import "fmt"
+
+func main() {
+	var bilangan, j int
+	fmt.Scan(&bilangan)
+	for j = 1; j <= bilangan; j += 1 {
+		if j%2 != 0 {
+			fmt.Print(j, " ")
+		}
+	}
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 13\Guided 1.go"
+12
+1 2 3 4 6 12
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
