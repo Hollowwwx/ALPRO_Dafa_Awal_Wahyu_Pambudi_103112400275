@@ -1,1 +1,153 @@
+// Program ini digunakan untuk menghitung total biaya pengiriman parsel berdasarkan beratnya dalam gram. 
+// Program pertama-tama meminta pengguna untuk memasukkan berat parsel dalam satuan gram. 
+// Kemudian, berat parsel tersebut diubah menjadi satuan kilogram dan gram. 
+// Program menghitung biaya pengiriman berdasarkan berat tersebut, di mana biaya per kilogram adalah Rp 10.000, dan biaya untuk gram dihitung berbeda tergantung pada kondisi beratnya. 
+// Jika berat gram lebih dari atau sama dengan 500 gram, biaya per gram adalah Rp 5. 
+// Jika berat gram kurang dari 500 dan berat parsel lebih dari 10 kilogram, biaya gram adalah 0. Jika tidak, biaya per gram adalah Rp 15. 
+// Total biaya dihitung dengan menjumlahkan biaya per kilogram dan biaya per gram, kemudian hasilnya ditampilkan dalam format yang jelas, termasuk detil berat dan biaya. 
+// Program ini berguna untuk menghitung biaya pengiriman parsel berdasarkan beratnya.
 
+CODE:
+
+package main
+
+import "fmt"
+
+func main() {
+	var beratparsel int
+
+	fmt.Print("Masukkan berat parsel (gram): ")
+	fmt.Scan(&beratparsel)
+
+	kg := beratparsel / 1000
+	gram := beratparsel % 1000
+
+	biayaKg := kg * 10000
+	var biayaGram int
+
+	if gram >= 500 {
+		biayaGram = gram * 5
+	} else if kg > 10{
+		biayaGram = 0
+	} else {
+		biayaGram = gram * 15
+	}
+
+	totalbiaya := biayaKg + biayaGram
+
+	fmt.Println("Detil berat: ", kg, "kg +", gram, "gr")
+	fmt.Println("Detil Biaya: Rp.", biayaKg, "+ Rp.", biayaGram)
+	fmt.Println("Total Biaya: Rp.", totalbiaya)
+}
+
+OUPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 9\tempCodeRunnerFile.go"
+Masukkan berat parsel (gram): 8500
+Detil berat:  8 kg + 500 gr
+Detil Biaya: Rp. 80000 + Rp. 2500
+Total Biaya: Rp. 82500
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Program ini digunakan untuk mengonversi nilai akhir mata kuliah yang dimasukkan pengguna ke dalam indeks nilai huruf berdasarkan rentang nilai tertentu. 
+// Pengguna diminta untuk memasukkan nilai akhir dalam bentuk angka desimal, kemudian program menggunakan serangkaian kondisi if-else untuk menentukan indeks nilai huruf. 
+// Jika nilai lebih besar atau sama dengan 80, indeksnya adalah "A"; antara 72,5 hingga 80 adalah "AB"; 
+// antara 65 hingga 72,5 adalah "B"; antara 57,5 hingga 65 adalah "BC"; antara 50 hingga 57,5 adalah "C"; 
+// antara 40 hingga 50 adalah "D"; dan kurang dari 40 diberi indeks "E". 
+// Program ini membantu dalam mengonversi nilai numerik menjadi bentuk indeks yang lebih mudah dipahami dalam sistem penilaian akademik.
+
+CODE:
+
+package main
+
+import "fmt"
+
+func main() {
+	var nam float64
+	var nmk string
+
+	fmt.Print("Nilai akhir mata kuliah: ")
+	fmt.Scan(&nam)
+
+	if nam >= 80 {
+		nmk = "A"
+	} else if nam >= 72.5 {
+		nmk = "AB"
+	} else if nam >= 65 {
+		nmk = "B"
+	} else if nam >= 57.5 {
+		nmk = "BC"
+	} else if nam >= 50 {
+		nmk = "C"
+	} else if nam >= 40 {
+		nmk = "D"
+	} else {
+		nmk = "E"
+	}
+
+	fmt.Println("Nilai mata kuliah:", nmk)
+}
+
+OUPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 9\Unguided 2.go"
+Nilai akhir mata kuliah: 80
+Nilai mata kuliah: A
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Program ini digunakan untuk menentukan faktor-faktor dari sebuah bilangan serta memeriksa apakah bilangan tersebut merupakan bilangan prima. 
+// Pertama, program meminta pengguna untuk memasukkan sebuah bilangan. 
+// Program kemudian mencetak semua faktor dari bilangan tersebut dengan membagi bilangan tersebut dengan angka-angka mulai dari 1 hingga bilangan itu sendiri dan mencetak angka yang dapat membagi habis bilangan. 
+// Setelah itu, program memeriksa apakah bilangan tersebut prima. Jika bilangan kurang dari atau sama dengan 1, program mencetak "Prima: false", karena bilangan prima harus lebih besar dari 1. 
+// Untuk bilangan 2 dan 3, langsung dikategorikan sebagai prima. 
+// Jika bilangan lebih besar dari 3, program memeriksa apakah bilangan tersebut habis dibagi 2 atau 3, yang menandakan bilangan tersebut bukan prima. 
+// Jika tidak, program melanjutkan untuk memeriksa apakah bilangan tersebut dapat dibagi oleh angka lain yang lebih besar, dengan menguji angka-angka dalam pola 6k ± 1 (5, 7, 11, 13, dst). 
+// Jika tidak ada pembagi yang ditemukan, maka bilangan tersebut dianggap prima. Program ini berguna untuk mengetahui faktor dari sebuah bilangan dan memverifikasi apakah bilangan tersebut adalah bilangan prima.
+
+CODE:
+
+package main
+
+import "fmt"
+
+func main() {
+	var bilangan int
+
+	fmt.Print("Bilangan: ")
+	fmt.Scanln(&bilangan)
+
+	fmt.Print("Faktor: ")
+	for i := 1; i <= bilangan; i++ {
+		if bilangan%i == 0 {
+			fmt.Print(i, " ")
+		}
+	}
+	fmt.Println()
+
+	if bilangan <= 1 {
+		fmt.Println("Prima: false")
+	} else if bilangan <= 3 {
+		fmt.Println("Prima: true")
+	} else if bilangan%2 == 0 || bilangan%3 == 0 {
+		fmt.Println("Prima: false")
+	} else {
+		var i int = 5
+		for i*i <= bilangan {
+			if bilangan%i == 0 || bilangan%(i+2) == 0 {
+				fmt.Println("Prima: false")
+				return
+			}
+			i = i + 6
+		}
+		fmt.Println("Prima: true")
+	}
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 9\tempCodeRunnerFile.go"
+Bilangan: 12
+Faktor: 1 2 3 4 6 12 
+Prima: false
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

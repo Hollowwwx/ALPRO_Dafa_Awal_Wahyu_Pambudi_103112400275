@@ -1,1 +1,121 @@
+// Program ini digunakan untuk mengklasifikasikan nilai yang dimasukkan oleh pengguna ke dalam kategori indeks nilai, seperti A, AB, B, atau C. 
+// Program pertama-tama meminta pengguna untuk memasukkan sebuah nilai, kemudian menggunakan serangkaian kondisi if untuk menentukan indeks nilai berdasarkan rentang nilai yang diberikan. 
+// Jika nilai lebih besar dari 90, indeks akan diberikan sebagai "A". 
+// Jika nilai berada di antara 80 dan 90 (termasuk), indeks diberikan sebagai "AB". 
+// Untuk nilai antara 70 dan 80, indeks diberikan sebagai "B". Jika nilai lebih rendah dari 70, indeks diberikan sebagai "C". 
+// Program ini berguna untuk memberikan penilaian atau klasifikasi berdasarkan rentang nilai dalam sistem penilaian akademik.
 
+CODE: 
+
+package main
+
+import "fmt"
+
+func main() {
+    var nilai int
+
+    fmt.Print( "Masukkan nilai: " )
+    fmt.Scan( &nilai )
+
+    var indeks string
+    if nilai > 90 {
+        indeks = "A"
+    } else if nilai >= 80 && nilai <= 90 {
+        indeks = "AB"
+    } else if nilai >= 70 && nilai <= 80 {
+        indeks = "B"
+    } else { 
+        indeks = "C"
+    }
+
+    fmt.Println( "Indeks nilai: ", indeks )
+
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 9\TP 1.go"
+Masukkan nilai: 91
+Indeks nilai:  A
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Program ini berfungsi untuk menentukan apakah huruf yang dimasukkan oleh pengguna merupakan huruf vokal atau konsonan. 
+// Program pertama-tama meminta pengguna untuk memasukkan sebuah huruf, 
+   kemudian mengubah huruf tersebut menjadi huruf kapital menggunakan fungsi strings.ToUpper() agar pengecekan menjadi tidak sensitif terhadap huruf besar atau kecil. 
+// Setelah itu, program memeriksa apakah huruf tersebut termasuk dalam kelompok huruf vokal (A, I, U, E, O). Jika ya, program mencetak "Huruf vokal". 
+// Jika tidak, program mencetak "Huruf konsonan". Program ini berguna untuk membedakan antara huruf vokal dan konsonan dalam bahasa Indonesia.
+
+CODE:
+
+package main
+
+import ("fmt"
+		"strings") 
+
+func main() {
+	var huruf string
+
+	fmt.Print("Masukkan huruf: ")
+	fmt.Scan(&huruf)
+
+	huruf = strings.ToUpper(huruf)
+
+	if huruf == "A" || huruf == "I" || huruf == "U" || huruf == "E" || huruf == "O" {
+		fmt.Println("Huruf vokal")
+	} else {
+		fmt.Println("Huruf konsonan")
+	}
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 9\tempCodeRunnerFile.go"
+Masukkan huruf: A
+Huruf vokal
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Program ini digunakan untuk menentukan apakah seseorang memenuhi syarat untuk mengikuti pemilu berdasarkan usia dan kewarganegaraan. 
+// Program pertama-tama meminta pengguna untuk memasukkan umur dan kewarganegaraan (WNI/WNA). 
+// Program kemudian memeriksa dua kondisi utama: apakah umur pengguna sudah mencapai 17 tahun dan apakah pengguna merupakan WNI. 
+// Jika kedua kondisi tersebut terpenuhi, program mencetak "Anda bisa mengikuti pemilu". 
+// Jika tidak, program memeriksa kondisi lainnya: jika umur kurang dari 17 dan kewarganegaraan bukan WNI, program mencetak alasan "Anda tidak bisa mengikuti pemilu karena belum cukup umur dan bukan WNI". 
+// Jika hanya umur yang belum mencukupi, program mencetak "Anda tidak bisa mengikuti pemilu karena belum cukup umur", dan jika kewarganegaraan bukan WNI, program mencetak "Anda tidak bisa mengikuti pemilu karena bukan WNI". 
+// Program ini berguna untuk memverifikasi syarat kepesertaan pemilu berdasarkan usia dan status kewarganegaraan.
+
+CODE:
+
+package main
+
+import "fmt"
+
+func main() {
+	var umur int
+	var kewarganegaraan string
+
+	fmt.Print("Masukkan umur: ")
+	fmt.Scan(&umur)
+
+	fmt.Print("Masukkan kewarganegaraan (WNI/WNA): ")
+	fmt.Scan(&kewarganegaraan)
+
+	if umur >= 17 && kewarganegaraan == "WNI" {
+		fmt.Println("Anda bisa mengikuti pemilu")
+	} else {
+		if umur < 17 && kewarganegaraan != "WNI" {
+			fmt.Println("Anda tidak bisa mengikuti pemilu karena belum cukup umur dan bukan WNI")
+		} else if umur < 17 {
+			fmt.Println("Anda tidak bisa mengikuti pemilu karena belum cukup umur.")
+		} else {
+			fmt.Println("Anda tidak bisa mengikuti pemilu karena bukan WNI.")
+		}
+	}
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 9\tempCodeRunnerFile.go"
+Masukkan umur: 17
+Masukkan kewarganegaraan (WNI/WNA): WNI
+Anda bisa mengikuti pemilu
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

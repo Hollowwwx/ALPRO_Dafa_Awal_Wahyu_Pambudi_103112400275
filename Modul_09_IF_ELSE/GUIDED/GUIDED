@@ -1,1 +1,102 @@
-kanjut
+// Program ini berfungsi untuk menentukan apakah seseorang memenuhi syarat untuk membuat KTP berdasarkan usia dan status kepemilikan Kartu Keluarga (KK). 
+// Program meminta pengguna untuk memasukkan usia dan status kepemilikan KK, yang disimpan dalam variabel usia dan kk. 
+// Kemudian, program memeriksa dua kondisi: apakah usia pengguna lebih dari atau sama dengan 17 tahun dan apakah status KK bernilai true (memiliki KK). 
+// Jika kedua kondisi tersebut terpenuhi, program mencetak "bisa membuat KTP". 
+// Jika salah satu atau keduanya tidak terpenuhi, program mencetak "belum bisa membuat KTP". 
+// Program ini berguna untuk verifikasi persyaratan pembuatan KTP berdasarkan usia dan dokumen kependudukan.
+
+CODE:
+
+package main  
+import "fmt"  
+func main() {  
+var usia int  
+var kk bool  
+fmt.Scan(&usia, &kk)  
+if usia >= 17 && kk {  
+fmt.Println("bisa membuat KTP")  
+}else{  
+fmt.Println("belum bisa membuat KTP")  
+} 
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 9\tempCodeRunnerFile.go"
+17
+true
+bisa membuat KTP
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Program ini digunakan untuk menentukan jenis karakter yang dimasukkan oleh pengguna, apakah itu huruf vokal, konsonan, atau bukan huruf sama sekali. 
+// Program pertama-tama meminta pengguna untuk memasukkan sebuah karakter menggunakan input bertipe rune. 
+// Kemudian, program memeriksa apakah karakter tersebut adalah huruf, baik huruf kecil maupun huruf besar. 
+// Jika karakter tersebut merupakan huruf, program melanjutkan untuk memeriksa apakah itu termasuk huruf vokal, baik huruf kecil (a, i, u, e, o) atau huruf besar (A, I, U, E, O). 
+// Jika karakter tersebut adalah vokal, program mencetak "vokal", sedangkan jika itu adalah konsonan, program mencetak "konsonan". 
+// Jika karakter yang dimasukkan bukan huruf, program mencetak "bukan huruf". Program ini berguna untuk mengklasifikasikan karakter berdasarkan jenisnya (vokal, konsonan, atau bukan huruf).
+
+CODE:
+
+package main  
+import "fmt"  
+func main() {  
+var x rune 
+var huruf, vKecil, vBesar bool 
+fmt.Scanf("%c", &x) 
+huruf = (x >= 'a' && x <= 'z') || (x >= 'A' && x <= 'Z') 
+vKecil = x == 'a' || x == 'i' || x == 'u' || x == 'e' || x == 'o' 
+vBesar = x == 'A' || x == 'I' || x == 'U' || x == 'E' || x == 'O' 
+if huruf && (vKecil || vBesar) {  
+fmt.Println("vokal")  
+}else if huruf && !(vKecil || vBesar){ 
+fmt.Println("konsonan") 
+}else{  
+fmt.Println("bukan huruf") 
+} 
+}
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 9\tempCodeRunnerFile.go"
+A
+vokal
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Program ini digunakan untuk memeriksa apakah digit dalam bilangan empat digit yang dimasukkan oleh pengguna terurut secara membesar, mengecil, atau tidak terurut sama sekali. 
+// Program pertama-tama meminta pengguna untuk memasukkan bilangan empat digit. 
+// Kemudian, program memisahkan digit-digit bilangan tersebut ke dalam variabel d1, d2, d3, dan d4 berdasarkan posisi digitnya (ribuan, ratusan, puluhan, satuan). 
+// Setelah itu, program memeriksa urutan nilai dari digit-digit tersebut: jika digit pertama lebih kecil dari digit kedua, digit kedua lebih kecil dari digit ketiga, 
+   dan digit ketiga lebih kecil dari digit keempat, maka program mencetak "terurut membesar". 
+// Jika digit pertama lebih besar dari digit kedua, digit kedua lebih besar dari digit ketiga, dan digit ketiga lebih besar dari digit keempat, maka program mencetak "terurut mengecil". 
+// Jika keduanya tidak terpenuhi, program mencetak "tidak terurut". Program ini berguna untuk memeriksa pola urutan dalam bilangan.
+
+CODE:
+
+package main  
+import "fmt"  
+func main() {  
+    var bilangan, d1, d2, d3, d4 int 
+    var teks string 
+    fmt.Print("Bilangan: ") 
+    fmt.Scan(&bilangan) 
+    d4 = bilangan % 10 
+    d3 = (bilangan % 100) / 10 
+    d2 = (bilangan % 1000) / 10 
+    d1 = bilangan / 1000 
+    if d1 < d2 && d2 < d3 && d3 < d4 {  
+        teks = "terurut membesar" 
+    }else if d1 > d2 && d2 > d3 && d3 > d4{ 
+        teks = "terurut mengecil" 
+    }else{  
+        teks = "tidak terurut" 
+    } 
+    fmt.Println("Digit pada bilangan", bilangan, teks) 
+} 
+
+OUTPUT:
+
+PS E:\Golang\Linux golang galing> go run "e:\Golang\Linux golang galing\Modul 9\tempCodeRunnerFile.go"     
+Bilangan: 2489
+Digit pada bilangan 2489 terurut membesar
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
